@@ -69,7 +69,7 @@ public class Cell {
 					numLivingNeighbors++;
 				}
 			}
-			if (this.indexCol + 1 < gridArray.length) {
+			if (this.indexCol + 1 < gridArray[0].length) {
 				if (gridArray[indexRow - 1][indexCol + 1].getAlive()) {
 					numLivingNeighbors++;
 				}
@@ -85,7 +85,7 @@ public class Cell {
 					numLivingNeighbors++;
 				}
 			}
-			if (this.indexCol + 1 < gridArray.length) {
+			if (this.indexCol + 1 < gridArray[0].length) {
 				if (gridArray[indexRow + 1][indexCol + 1].getAlive()) {
 					numLivingNeighbors++;
 				}
@@ -100,7 +100,7 @@ public class Cell {
 				numLivingNeighbors++;
 			}
 		}
-		if (this.indexCol + 1 < gridArray.length) {
+		if (this.indexCol + 1 < gridArray[0].length) {
 			if (gridArray[this.indexRow][this.indexCol + 1].getAlive()) {
 				numLivingNeighbors++;
 			}

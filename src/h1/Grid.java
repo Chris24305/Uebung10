@@ -39,12 +39,12 @@ public class Grid {
 	
 	public void computeNextGen () {
 		for (int i = 0; i < gridArray.length; i++) {
-			for (int j = 0; j < gridArray.length; j++) {
+			for (int j = 0; j < gridArray[i].length; j++) {
 				gridArray[i][j].setAlive(gridArray[i][j].getIsAliveNextGen());
 			}
 		}
 		for (int i = 0; i < gridArray.length; i++) {
-			for (int j = 0; j < gridArray.length; j++) {
+			for (int j = 0; j < gridArray[i].length; j++) {
 				gridArray[i][j].countLivingNeighbors(gridArray);
 			}
 		}
