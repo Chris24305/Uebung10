@@ -36,10 +36,32 @@ public class Spielstein {
 	}
 
 	private boolean movesOut() {
-		if (currentRow == 0) {
-			
+		Feld feld = brett.getBrett()[currentRow][currentCol];
+		if (currentRow == 0 && feld.getDirection() == 'U') {
+			return true;
 		}
-		
+		if (currentRow + 1 == brett.getDim() && feld.getDirection() == 'D') {
+			return true;
+		}
+		if (currentCol == 0 && feld.getDirection() == 'L') {
+			return true;
+		}
+		if (currentCol + 1 == brett.getDim() && feld.getDirection() == 'R') {
+			return true;
+		}
 		return false;
+	}
+	
+	public void go(int n) {
+		
+		for (int i = 0; i < n; i++) {
+			Feld feld = brett.getBrett()[currentRow][currentCol];
+			if (movesOut()) continue;
+			if (feld.isBoese()) continue;
+			if (feld.getDirection() == 'U') currentRow --;
+			if (feld.getDirection() == 'D') currentRow ++;
+			if (feld.getDirection() == 'L') currentCol --;
+			if (feld.getDirection() == 'R') currentCol ++;
+		}
 	}
 }
